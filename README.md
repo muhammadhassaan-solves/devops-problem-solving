@@ -2,6 +2,7 @@
 13. ClickJacking and Essential Http Headers
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 Date: 09/12/25
+
 Since I was using ALB with AWS Load balancer controller in kubernetes cluster, I explored various methods 
 and at the end I found that there is an option in load balancer settings that allow to change attributes of the listener. 
 So, I simply turn on these reponse headers as follow:
@@ -21,6 +22,7 @@ our critical produciton based application raised by our VAPT Team.
 12. Pod Internal Connectivity got disturbed after I tried to make some changes in aws native cni for network policy
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 Date: 26/11/25
+
 After hours of troubleshooting, I found that changing worker nodes  is the solution. So, I dissociated the worker nodes ec2 from Auto Scaler group one by one and 
 the autoscaling group (asg) automatically launched new worker nodes and things started to work properly. 
 
@@ -28,6 +30,7 @@ the autoscaling group (asg) automatically launched new worker nodes and things s
 11. I was facing 403 error after kubernetes deployment
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 Date: 24/11/2025
+
 After hours of troubleshooting, I found that that the client security team added our alb to waf. So, the issue was oversize handling by AWS managed rules on aws.
 
 following ai-assisted search helped me.
@@ -52,6 +55,7 @@ Note: This means WAF inspects the first 8KB, checks for attacks, and if clean, l
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 10. The client requirement was that they need to inspect east-west traffic inspection inside private subnets where worker nodes are deployed.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 Date: 13/10/2025
 
 Solution:
@@ -60,6 +64,7 @@ While launching EKS, I didn't use nat for private subnets. Instead we add TGW in
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 9. EFS related deployment was not getting successful.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 Date: 12/10/2025
 
 Solution:
@@ -72,6 +77,7 @@ for cheking issues, related to networking use aws system manager to the worker n
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 8. Request Size Limitation: Large API Payloads Failing
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 Date: 22/09/2025
 
 Problem:
@@ -96,6 +102,7 @@ systemctl reload nginx
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 7. Github Actions CI/CD Automation: RAG WebUI App Deployment
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 Date: 24/09/2025
 
 Problem:
@@ -117,6 +124,7 @@ RUN npm run pyodide:fetch && npm run build
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 6. CORS Header Configuration Fix
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 Date: 1/10/2025
 
 Problem:
@@ -144,6 +152,7 @@ If missing, update the environment configuration.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 5. Deployment Issue: Updated Code Not Reflecting on Website
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 Date: 22/10/2025
 
 Problem:
@@ -161,6 +170,7 @@ This freed up approximately 42 GB of disk space. Afterward, developer was able t
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 4. Application Hang Issue: Node.js Container Not Restarting
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 Date: 24/10/2025
 
 Problem:
@@ -178,6 +188,7 @@ In the Kubernetes environment, this change aligned perfectly with Kubernetes’ 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 3. SSH in WSL2
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 Date: 27/10/25
 
 In wsl2, i was facing issue while ssh into ec2 with pem key.
@@ -193,6 +204,7 @@ chmod 600 ~/.ssh/file.pem
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 2. Frontend Unreachable (502 Bad Gateway)
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 Date: 29/10/2025
 
 Problem:
@@ -211,6 +223,7 @@ Identified the correct port (8080) and recreated the container with updated port
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 1. The server wasn't working as required. Latency issues, disk issues and memory issues and one time it os got affected.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 Date: 29/10/2025
 
 Problem:
